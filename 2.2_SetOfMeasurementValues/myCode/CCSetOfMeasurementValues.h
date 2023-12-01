@@ -10,6 +10,11 @@
 
 class CCSetOfMeasurementValues
 {
+private:
+
+public:
+
+
 };
 
 #endif /* CCSETOFMEASUREMENTVALUES_H_ */
