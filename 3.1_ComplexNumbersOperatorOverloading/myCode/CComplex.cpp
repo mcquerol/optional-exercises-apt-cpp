@@ -21,6 +21,8 @@ CComplex::CComplex(float real, float imaginary)
     m_real = real;
     m_imaginary = imaginary;
 
+    std::cout << "Created object at address: " << this << std::endl;
+
 }
 
 CComplex::CComplex(const CComplex &c)
@@ -37,6 +39,8 @@ CComplex::CComplex(const CComplex &c)
 
     m_real = c.m_real;
     m_imaginary = c.m_imaginary;
+
+    std::cout << "Created object at address: " << this << std::endl;
 }
 
 void CComplex::set(float real, float imaginary)
