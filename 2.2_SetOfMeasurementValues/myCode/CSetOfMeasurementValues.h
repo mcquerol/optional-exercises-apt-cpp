@@ -11,7 +11,10 @@
 #include <iostream>
 #include <string.h>
 
-class CCSetOfMeasurementValues
+#define MAXVALUE	10
+#define NOVALUE		-9999
+
+class CSetOfMeasurementValues
 {
 
 public:
@@ -40,7 +43,7 @@ private:
 
 	double m_value[10];
 	t_unit m_unit;
-	std::string name;
+	std::string m_name;
 
 	void printSingleValue(unsigned int pos) const;
 
