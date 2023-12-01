@@ -80,11 +80,11 @@ void CCoordinate::setCartesian(float x, float y, float z)
     m_z = z;
 }
 
-void CCoordinate::add(CCoordinate &c)
+void CCoordinate::add(const CCoordinate& c)
 {
-    this->m_x += c.m_x;
-    this->m_y += c.m_y;
-    this->m_z += c.m_z;
+    m_x += c.m_x;
+    m_y += c.m_y;
+    m_z += c.m_z;
 }
 
 void CCoordinate::print(t_coordinate style)
