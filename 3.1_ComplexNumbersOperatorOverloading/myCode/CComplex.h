@@ -10,6 +10,20 @@
 
 class CComplex
 {
+	private:
+		float m_real;
+		float m_imaginary;
+
+	public:
+		CComplex(float real = 0, float imaginary = 0);
+		CComplex(CComplex const& c);
+
+		void set(float real, float imaginary);
+		float abs();
+		void print() const;
+		CComplex& operator++();
+		CComplex operator++(int);
+
 };
 
 #endif /* CCOMPLEX_H_ */
