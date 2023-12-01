@@ -38,7 +38,7 @@ public:
 	void getCartesian(float &x, float &y, float &z);
 	void setCartesian(float x, float y, float z);
 
-	void add(CCoordinate& c);
+	void add(const CCoordinate& c);
 	void print(t_coordinate style);
 };
 
