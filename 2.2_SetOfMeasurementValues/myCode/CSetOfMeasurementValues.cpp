@@ -37,7 +37,7 @@ void CSetOfMeasurementValues::setRandomValues(int min, int max)
 {
 	for(int i = 0 ; i < 10; i++)
 	{
-		m_value[i] = min + rand() % (max - min + 1);
+		m_value[i] = (double)min + rand() % (max - min + 1);
 	}
 
 
