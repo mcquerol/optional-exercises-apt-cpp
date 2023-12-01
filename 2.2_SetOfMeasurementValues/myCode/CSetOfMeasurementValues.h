@@ -33,7 +33,7 @@ public:
 	void setValue(unsigned int pos, double value);
 	void setRandomValues(int min, int max);
 	void print() const;
-	double getValue(unsigned int post) const;
+	double getValue(unsigned int pos) const;
 	double getAverage() const;
 	double getMax() const;
 	double getMin() const;
