@@ -40,7 +40,16 @@ void CSetOfMeasurementValues::setRandomValues(int min, int max)
 
 void CSetOfMeasurementValues::print() const
 {
-
+    for (int i = 0; i < 10; i++)
+    {
+        if (m_value[i] != NOVALUE)
+        {
+        	printSingleValue(i);
+        }
+    }
+    std::cout << "min value = " << getMin() << std::endl;
+    std::cout << "max value = " << getMax() << std::endl;
+    std::cout << "average value = " << getAverage() << std::endl;
 }
 
 double CSetOfMeasurementValues::getValue(unsigned int pos) const
@@ -136,9 +145,8 @@ void CSetOfMeasurementValues::printSingleValue(unsigned int pos) const
 			tempUnit = " Watts";
 			break;
 		case NONE:
-			tempUnit = "NONE";
+			tempUnit = " NONE";
 			break;
 	}
-
-	std::cout << "The value at position " << pos <<" is "<< m_value << tempUnit << std::endl;
+	std::cout << "m_value[" << pos << "] = " << m_value[pos] << tempUnit << std::endl;
 }
