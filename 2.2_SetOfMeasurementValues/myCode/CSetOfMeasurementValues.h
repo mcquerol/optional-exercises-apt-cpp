@@ -1,5 +1,5 @@
 /*
- * CSetOfMeasurementValues.h
+ * CCSetOfMeasurementValues.h
  *
  *  Created on: 1 Dec 2023
  *      Author: robom
@@ -8,9 +8,41 @@
 #ifndef CSETOFMEASUREMENTVALUES_H_
 #define CSETOFMEASUREMENTVALUES_H_
 
-class CSetOfMeasurementValues
+#include <iostream>
+#include <string.h>
+
+class CCSetOfMeasurementValues
 {
 
+public:
+
+	enum t_unit
+	{
+		A,
+		V,
+		S,
+		W,
+		NONE
+	};
+
+	CSetOfMeasurementValues(std::string name, t_unit unit);
+
+	void setValue(unsigned int pos, double value);
+	void setRandomValues(int min, int max);
+	void print() const;
+	double getValue(unsigned int post) const;
+	double getAverage() const;
+	double getMax() const;
+	double getMin() const;
+
+
+private:
+
+	double m_value[10];
+	t_unit m_unit;
+	std::string name;
+
+	void printSingleValue(unsigned int pos) const;
 
 };
 

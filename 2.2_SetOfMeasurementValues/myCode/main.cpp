@@ -13,7 +13,7 @@ using namespace std;
 int main ()
 {
     // TODO: Add your program code here
-	cout << "2.1_Coordinate started." << endl << endl;
+	cout << "2.2_SetOfMeasurementValues started." << endl << endl;
 
 	return 0;
 }

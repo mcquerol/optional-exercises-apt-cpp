@@ -9,10 +9,10 @@
 		<item key="testFileSelected" value="false"/>
 		<item key="finalSelected" value="false"/>
 		<item key="stubImpl0" value="DEFINITION"/>
-		<item key="stubSelected0" value="true"/>
+		<item key="stubSelected0" value="false"/>
 		<item key="stubVirtual1" value="true"/>
 		<item key="stubImpl1" value="DEFINITION"/>
-		<item key="stubSelected1" value="true"/>
+		<item key="stubSelected1" value="false"/>
 		<item key="stubImpl2" value="DEFINITION"/>
 		<item key="stubSelected2" value="false"/>
 		<item key="stubImpl3" value="DEFINITION"/>
@@ -21,5 +21,8 @@
 		<item key="stubSelected4" value="false"/>
 		<item key="stubImpl5" value="DEFINITION"/>
 		<item key="stubSelected5" value="false"/>
+	</section>
+	<section name="CResourceRenameRefactoringInputPage">
+		<item key="updateReferences" value="true"/>
 	</section>
 </section>
