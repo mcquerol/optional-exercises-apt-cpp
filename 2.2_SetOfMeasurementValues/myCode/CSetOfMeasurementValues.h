@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <string.h>
+#include <algorithm>
 
 #define MAXVALUE	10
 #define NOVALUE		-9999
