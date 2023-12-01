@@ -55,8 +55,27 @@ double CSetOfMeasurementValues::getValue(unsigned int pos) const
 
 double CSetOfMeasurementValues::getAverage() const
 {
-	return 0.0;
+    double sum = 0.0;
+    int noValid = 0;
+
+    for (const double& value : m_value)
+    {
+        if (value != NOVALUE)
+        {
+            sum += value;
+            noValid++;
+        }
+    }
+
+    if (noValid == 0)
+    {
+        // Avoid division by zero
+        return NOVALUE;
+    }
+
+    return (sum / noValid);
 }
+
 
 double CSetOfMeasurementValues::getMax() const
 {
