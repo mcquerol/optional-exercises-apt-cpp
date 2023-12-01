@@ -11,6 +11,7 @@
 #include <iostream>
 #include <string.h>
 #include <algorithm>
+#include <ctime>
 
 #define MAXVALUE	10
 #define NOVALUE		-9999
