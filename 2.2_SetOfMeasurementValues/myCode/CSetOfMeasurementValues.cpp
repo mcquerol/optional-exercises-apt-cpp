@@ -24,7 +24,7 @@ void CSetOfMeasurementValues::setValue(unsigned int pos, double value)
 {
 	if(pos < 0 || pos > 10)
 	{
-		std::cerr << "OUT OF BOUNDS" << std::endl;
+		std::cerr << "OUT OF BOUNDS, " << value << " was not added " << "at position" << pos << std::endl;
 	}
 	else
 	{
@@ -65,5 +65,23 @@ double CSetOfMeasurementValues::getMin() const
 
 void CSetOfMeasurementValues::printSingleValue(unsigned int pos) const
 {
+	std::string tempUnit;
 
+	switch(m_unit)
+	{
+		case A:
+			tempUnit = " Ampere";
+			break;
+		case V:
+			tempUnit = " Volt";
+			break;
+		case S:
+			tempUnit = " Seconds";
+			break;
+		case W:
+			tempUnit = " Watts";
+			break;
+	}
+
+	std::cout << "The value at position " << pos <<"is "<< m_value << tempUnit << std::endl;
 }
