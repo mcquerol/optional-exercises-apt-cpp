@@ -43,9 +43,14 @@ void CSetOfMeasurementValues::print() const
 
 }
 
-double CSetOfMeasurementValues::getValue(unsigned int post) const
+double CSetOfMeasurementValues::getValue(unsigned int pos) const
 {
-	return 0.0;
+	if(pos < 0 || pos > 10)
+	{
+		return NOVALUE;
+	}
+
+	return m_value[pos];
 }
 
 double CSetOfMeasurementValues::getAverage() const
@@ -83,5 +88,5 @@ void CSetOfMeasurementValues::printSingleValue(unsigned int pos) const
 			break;
 	}
 
-	std::cout << "The value at position " << pos <<"is "<< m_value << tempUnit << std::endl;
+	std::cout << "The value at position " << pos <<" is "<< m_value << tempUnit << std::endl;
 }
