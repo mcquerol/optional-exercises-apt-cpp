@@ -86,6 +86,9 @@ void CSetOfMeasurementValues::printSingleValue(unsigned int pos) const
 		case W:
 			tempUnit = " Watts";
 			break;
+		case NONE:
+			tempUnit = "NONE";
+			break;
 	}
 
 	std::cout << "The value at position " << pos <<" is "<< m_value << tempUnit << std::endl;
