@@ -11,6 +11,8 @@ CCoordinate::CCoordinate(float x, float y, float z)
     std::cout << "y = " << m_y << std::endl;
     std::cout << "z = " << m_z << std::endl;
 
+
+
     std::cout << "--------------------"  << std::endl;
 }
 
