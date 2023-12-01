@@ -10,6 +10,8 @@
 
 class CSetOfMeasurementValues
 {
+
+
 };
 
 #endif /* CSETOFMEASUREMENTVALUES_H_ */

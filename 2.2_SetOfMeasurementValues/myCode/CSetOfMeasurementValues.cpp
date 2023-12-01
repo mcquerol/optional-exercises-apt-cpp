@@ -1,11 +1,9 @@
 /*
- * CCSetOfMeasurementValues.cpp
+ * CSetOfMeasurementValues.cpp
  *
  *  Created on: 1 Dec 2023
  *      Author: robom
  */
 
-#include "CCSetOfMeasurementValues.h"
-
-
+#include "CSetOfMeasurementValues.h"
 
