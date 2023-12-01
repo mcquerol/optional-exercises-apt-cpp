@@ -1,2 +1,17 @@
-Info: Nothing to build for 2.1_Coordinate
+12:22:00 **** Incremental Build of configuration Debug for project 2.1_Coordinate ****
+Info: Internal Builder is used for build
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -Wall -Werror=return-type -o "myCode\\main.o" "..\\myCode\\main.cpp" 
+..\myCode\main.cpp: In function 'int main()':
+..\myCode\main.cpp:25:16: error: cannot bind non-const lvalue reference of type 'CCoordinate&' to an rvalue of type 'CCoordinate'
+   25 |         c2.add(CCoordinate(1,2,3));
+      |                ^~~~~~~~~~~~~~~~~~
+In file included from ..\myCode\main.cpp:3:
+..\myCode\CCoordinate.h:41:31: note:   initializing argument 1 of 'void CCoordinate::add(CCoordinate&)'
+   41 |         void add(CCoordinate& c);
+      |                  ~~~~~~~~~~~~~^
+12:24:38 **** Incremental Build of configuration Debug for project 2.1_Coordinate ****
+Info: Internal Builder is used for build
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -Wall -Werror=return-type -o "myCode\\CCoordinate.o" "..\\myCode\\CCoordinate.cpp" 
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -Wall -Werror=return-type -o "myCode\\main.o" "..\\myCode\\main.cpp" 
+g++ -o 2.1_Coordinate.exe "myCode\\CCoordinate.o" "myCode\\main.o" 
 Info: Nothing to build for 2.1_Coordinate
