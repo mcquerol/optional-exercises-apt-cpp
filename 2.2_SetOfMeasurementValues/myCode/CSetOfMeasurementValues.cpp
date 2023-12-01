@@ -60,13 +60,43 @@ double CSetOfMeasurementValues::getAverage() const
 
 double CSetOfMeasurementValues::getMax() const
 {
-	return 0.0;
+    // Find the iterator pointing to the maximum element among valid values
+    auto maxIterator = std::max_element(std::begin(m_value), std::end(m_value),
+                                        [](double a, double b) {
+                                            return a != NOVALUE && (b == NOVALUE || a > b);
+                                        });
+
+    // Check if any valid values were found
+    if (maxIterator != std::end(m_value) && *maxIterator != NOVALUE)
+    {
+        // Return the maximum valid value
+        return *maxIterator;
+    }
+
+    // If no valid values are found, return NOVALUE
+    return NOVALUE;
 }
+
 
 double CSetOfMeasurementValues::getMin() const
 {
-	return 0.0;
+    // Find the iterator pointing to the minimum element among valid values
+    auto minIterator = std::min_element(std::begin(m_value), std::end(m_value),
+                                        [](double a, double b) {
+                                            return a != NOVALUE && (b == NOVALUE || a < b);
+                                        });
+
+    // Check if any valid values were found
+    if (minIterator != std::end(m_value) && *minIterator != NOVALUE)
+    {
+        // Return the minimum valid value
+        return *minIterator;
+    }
+
+    // If no valid values are found, return NOVALUE
+    return NOVALUE;
 }
+
 
 void CSetOfMeasurementValues::printSingleValue(unsigned int pos) const
 {
