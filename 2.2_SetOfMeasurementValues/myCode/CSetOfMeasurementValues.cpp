@@ -24,7 +24,7 @@ void CSetOfMeasurementValues::setValue(unsigned int pos, double value)
 {
 	if(pos < 0 || pos > 10)
 	{
-		std::cerr << "OUT OF BOUNDS, " << value << " was not added " << "at position" << pos << std::endl;
+		std::cerr << "OUT OF BOUNDS: getValue" << std::endl;
 	}
 	else
 	{
@@ -35,6 +35,11 @@ void CSetOfMeasurementValues::setValue(unsigned int pos, double value)
 
 void CSetOfMeasurementValues::setRandomValues(int min, int max)
 {
+	for(int i = 0 ; i < 10; i++)
+	{
+		m_value[i] = min + rand() % (max - min + 1);
+	}
+
 
 }
 
@@ -47,15 +52,16 @@ void CSetOfMeasurementValues::print() const
         	printSingleValue(i);
         }
     }
-    std::cout << "min value = " << getMin() << std::endl;
-    std::cout << "max value = " << getMax() << std::endl;
-    std::cout << "average value = " << getAverage() << std::endl;
+    std::cout << "	Max value = " << getMax() << std::endl;
+    std::cout << "	Min value = " << getMin() << std::endl;
+    std::cout << "	Avg value = " << getAverage() << std::endl;
 }
 
 double CSetOfMeasurementValues::getValue(unsigned int pos) const
 {
 	if(pos < 0 || pos > 10)
 	{
+		std::cerr << "OUT OF BOUNDS: getValue" << std::endl;
 		return NOVALUE;
 	}
 
@@ -88,21 +94,17 @@ double CSetOfMeasurementValues::getAverage() const
 
 double CSetOfMeasurementValues::getMax() const
 {
-    // Find the iterator pointing to the maximum element among valid values
-    auto maxIterator = std::max_element(std::begin(m_value), std::end(m_value),
-                                        [](double a, double b) {
-                                            return a != NOVALUE && (b == NOVALUE || a > b);
-                                        });
+    double maxValue = NOVALUE;
 
-    // Check if any valid values were found
-    if (maxIterator != std::end(m_value) && *maxIterator != NOVALUE)
+    for (const double& value : m_value)
     {
-        // Return the maximum valid value
-        return *maxIterator;
+        if (value != NOVALUE && (maxValue == NOVALUE || value > maxValue))
+        {
+            maxValue = value;
+        }
     }
 
-    // If no valid values are found, return NOVALUE
-    return NOVALUE;
+    return maxValue;
 }
 
 
@@ -148,5 +150,5 @@ void CSetOfMeasurementValues::printSingleValue(unsigned int pos) const
 			tempUnit = " NONE";
 			break;
 	}
-	std::cout << "m_value[" << pos << "] = " << m_value[pos] << tempUnit << std::endl;
+	std::cout << "	m_value[" << pos << "] = " << m_value[pos] << tempUnit << std::endl;
 }
