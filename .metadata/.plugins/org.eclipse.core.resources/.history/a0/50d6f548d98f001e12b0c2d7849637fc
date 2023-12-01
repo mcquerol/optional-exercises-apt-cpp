@@ -1,0 +1,18 @@
+/*
+ * CCoordinate.h
+ *
+ *  Created on: 1 Dec 2023
+ *      Author: robom
+ */
+
+#ifndef CCOORDINATE_H_
+#define CCOORDINATE_H_
+
+class CCoordinate
+{
+public:
+	CCoordinate();
+	virtual ~CCoordinate();
+};
+
+#endif /* CCOORDINATE_H_ */

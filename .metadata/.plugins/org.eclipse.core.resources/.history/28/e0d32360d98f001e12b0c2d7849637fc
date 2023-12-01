@@ -1,0 +1,20 @@
+/*
+ * CCoordinate.cpp
+ *
+ *  Created on: 1 Dec 2023
+ *      Author: robom
+ */
+
+#include "CCoordinate.h"
+
+CCoordinate::CCoordinate()
+{
+	// TODO Auto-generated constructor stub
+
+}
+
+CCoordinate::~CCoordinate()
+{
+	// TODO Auto-generated destructor stub
+}
+

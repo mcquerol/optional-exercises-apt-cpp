@@ -1,0 +1,26 @@
+
+#include <iostream>
+#include "CCoordinate.h"
+
+
+
+
+int main ()
+{
+    // TODO: Add your program code here
+
+
+	CCoordinate c1(4,4,2);
+	CCoordinate c2;
+	CCoordinate c3(-4);
+    std::cout << "--------------------" << std::endl;
+}
+	c1.print(CCoordinate::CARTESIAN);
+	c1.print(CCoordinate::CYLINDER);
+	c2.print(CCoordinate::CYLINDER);
+	c1.print(CCoordinate::POLAR);
+	c2.print(CCoordinate::POLAR);
+	c3.print(CCoordinate::POLAR);
+
+	return 0;
+}
