@@ -60,7 +60,7 @@ void CComplex::set(float real, float imaginary)
 
 }
 
-float CComplex::abs()
+float CComplex::abs() const
 {
 	if(m_real < 0)
 	{
@@ -77,6 +77,94 @@ void CComplex::print() const
 {
 	std::cout << m_real << " + " << m_imaginary << "i" << std::endl;
 }
+
+// Overloaded addition operator: complex + complex
+CComplex CComplex::operator+(const CComplex &other) const
+{
+    return CComplex(m_real + other.m_real, m_imaginary + other.m_imaginary);
+}
+
+// Overloaded addition operator: complex + float
+CComplex CComplex::operator+(float value) const
+{
+    return CComplex(m_real + value, m_imaginary);
+}
+
+// Overloaded addition operator: float + complex
+CComplex operator+(float value, const CComplex &complex)
+{
+    return CComplex(value + complex.m_real, complex.m_imaginary);
+}
+
+// Overloaded subtraction operator: complex - complex
+CComplex CComplex::operator-(const CComplex &other) const
+{
+    return CComplex(m_real - other.m_real, m_imaginary - other.m_imaginary);
+}
+
+// Overloaded subtraction operator: complex - float
+CComplex CComplex::operator-(float value) const
+{
+    return CComplex(m_real - value, m_imaginary);
+}
+
+// Overloaded subtraction operator: float - complex
+CComplex operator-(float value, const CComplex &complex)
+{
+    return CComplex(value - complex.m_real, -complex.m_imaginary);
+}
+
+// Overloaded multiplication operator: complex * complex
+CComplex CComplex::operator*(const CComplex &other) const
+{
+    float resultReal = m_real * other.m_real - m_imaginary * other.m_imaginary;
+    float resultImaginary = m_real * other.m_imaginary + m_imaginary * other.m_real;
+    return CComplex(resultReal, resultImaginary);
+}
+
+// Overloaded multiplication operator: complex * float
+CComplex CComplex::operator*(float value) const
+{
+    return CComplex(m_real * value, m_imaginary * value);
+}
+
+// Overloaded multiplication operator: float * complex
+CComplex operator*(float value, const CComplex &complex)
+{
+    return CComplex(value * complex.getReal(), value * complex.getImaginary());
+}
+
+// Overloaded division operator: complex / complex
+CComplex CComplex::operator/(const CComplex &other) const
+{
+    float denominator = other.m_real * other.m_real + other.m_imaginary * other.m_imaginary;
+    float resultReal = (m_real * other.m_real + m_imaginary * other.m_imaginary) / denominator;
+    float resultImaginary = (m_imaginary * other.m_real - m_real * other.m_imaginary) / denominator;
+    return CComplex(resultReal, resultImaginary);
+}
+
+// Overloaded division operator: complex / float
+CComplex CComplex::operator/(float value) const
+{
+    if (value != 0)
+    {
+        return CComplex(m_real / value, m_imaginary / value);
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+// Overloaded division operator: float / complex
+CComplex operator/(float value, const CComplex &complex)
+{
+    float denominator = complex.getReal() * complex.getReal() + complex.getImaginary() * complex.getImaginary();
+    float resultReal = (value * complex.getReal()) / denominator;
+    float resultImaginary = (-value * complex.getImaginary()) / denominator;
+    return CComplex(resultReal, resultImaginary);
+}
+
 
 //CComplex& CComplex::operator ++()
 //{
