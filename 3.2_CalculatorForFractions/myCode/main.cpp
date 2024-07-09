@@ -14,6 +14,8 @@ int main ()
 	f2.print();
 	f3.print();
 
+	std::cout << f2.toDouble() << std::endl;
+
 
 	return 0;
 }
