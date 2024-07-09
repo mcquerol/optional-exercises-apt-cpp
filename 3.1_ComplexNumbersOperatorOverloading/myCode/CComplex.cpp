@@ -44,6 +44,7 @@ CComplex::CComplex(const CComplex &c)
     std::cout << "Created object at address: " << this << std::endl;
 }
 
+
 void CComplex::set(float real, float imaginary)
 {
 	if(real < -100 || real > 100)
@@ -131,7 +132,7 @@ CComplex CComplex::operator*(float value) const
 // Overloaded multiplication operator: float * complex
 CComplex operator*(float value, const CComplex &complex)
 {
-    return CComplex(value * complex.getReal(), value * complex.getImaginary());
+    return CComplex(value * complex.m_real, value * complex.m_imaginary);
 }
 
 // Overloaded division operator: complex / complex
@@ -159,19 +160,33 @@ CComplex CComplex::operator/(float value) const
 // Overloaded division operator: float / complex
 CComplex operator/(float value, const CComplex &complex)
 {
-    float denominator = complex.getReal() * complex.getReal() + complex.getImaginary() * complex.getImaginary();
-    float resultReal = (value * complex.getReal()) / denominator;
-    float resultImaginary = (-value * complex.getImaginary()) / denominator;
+    float denominator = complex.m_real * complex.m_real + complex.m_imaginary * complex.m_imaginary;
+    float resultReal = (value * complex.m_real) / denominator;
+    float resultImaginary = (-value * complex.m_imaginary) / denominator;
     return CComplex(resultReal, resultImaginary);
 }
 
+CComplex& CComplex::operator++()
+{
+	m_real += 1;
+	m_imaginary += 1;
+	return *this;
+}
 
-//CComplex& CComplex::operator ++()
-//{
-//
-//}
-//
-//CComplex CComplex::operator ++(int)
-//{
-//
-//}
+
+CComplex CComplex::operator++(int)
+{
+	CComplex temp(*this);
+	++(*this);
+	return temp;
+}
+
+std::ostream& operator<<(std::ostream& out, const CComplex& c) {
+    out << c.m_real;
+    if (c.m_imaginary >= 0) {
+        out << " + " << "i" <<c.m_imaginary;
+    } else {
+        out << " - " << "i" <<-c.m_imaginary;
+    }
+    return out;
+}
