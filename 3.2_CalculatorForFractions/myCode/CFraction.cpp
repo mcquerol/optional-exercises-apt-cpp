@@ -59,7 +59,7 @@ void CFraction::set(long numerator, long denominator)
 
 double CFraction::toDouble() const
 {
-	return 0.0;
+	return (double) m_numerator / m_denominator;
 }
 
 void CFraction::print() const
