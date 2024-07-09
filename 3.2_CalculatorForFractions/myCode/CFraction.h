@@ -18,6 +18,7 @@ private:
 	void shorten();
 
 public:
+	CFraction();
 	CFraction(long numerator, long denominator);
 	void set(long numerator, long denominator);
 	double toDouble() const;
