@@ -1,19 +1,19 @@
-// Standard (system) header files
 #include <iostream>
-#include <cstdlib>
-// Add more standard header files as required
-// #include <string>
+#include "CFraction.h"
 
-using namespace std;
-
-// Add your project's header files here
-// #include "CFraction.h"
-
-// Main program
 int main ()
 {
     // TODO: Add your program code here
-	cout << "3.2_CalculatorForFractions started." << endl << endl;
+	std::cout << "3.2_CalculatorForFractions started." << std::endl << std::endl;
+
+	CFraction f1;
+	CFraction f2(1,3);
+	CFraction f3(24, 3);
+
+	f1.print();
+	f2.print();
+	f3.print();
+
 
 	return 0;
 }
