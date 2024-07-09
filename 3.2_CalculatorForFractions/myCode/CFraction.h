@@ -23,8 +23,27 @@ public:
 	void set(long numerator, long denominator);
 	double toDouble() const;
 	void print() const;
+
+	/* operator overloads for Fraction + Fraction */
+	CFraction operator+(const CFraction &f) const;
+	CFraction operator-(const CFraction &f) const;
+	CFraction operator*(const CFraction &f) const;
+	CFraction operator/(const CFraction &f) const;
+
+	/* operator overloads for Fraction + Integer */
+	CFraction operator+(int value);
+	CFraction operator-(int value);
+	CFraction operator*(int value);
+	CFraction operator/(int value);
+
+	/* operator overloads for Integer + Fraction */
+	friend CFraction operator+(int value, const CFraction &f);
+	friend CFraction operator-(int value, const CFraction &f);
+	friend CFraction operator*(int value, const CFraction &f);
+	friend CFraction operator/(int value, const CFraction &f);
+
 	CFraction& operator++();
-	CFraction& operator++(int);
+	CFraction operator++(int);
 
 };
 
