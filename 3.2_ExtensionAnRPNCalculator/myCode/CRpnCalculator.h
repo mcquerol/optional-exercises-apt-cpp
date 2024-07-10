@@ -13,7 +13,7 @@
 class CRpnCalculator
 {
 private:
-	CLifoBuffer stack;
+	CLifoBuffer m_stack;
 public:
 	bool pushValue(const CFraction& data);
 	bool popValue(CFraction& data);
