@@ -9,7 +9,7 @@
 		<item key="testFileSelected" value="false"/>
 		<item key="finalSelected" value="false"/>
 		<item key="stubImpl0" value="DEFINITION"/>
-		<item key="stubSelected0" value="false"/>
+		<item key="stubSelected0" value="true"/>
 		<item key="stubVirtual1" value="true"/>
 		<item key="stubImpl1" value="DEFINITION"/>
 		<item key="stubSelected1" value="false"/>

@@ -1,15 +1,5 @@
-22:03:59 **** Incremental Build of configuration Debug for project 3.1_ComplexNumbersOperatorOverloading ****
+17:24:14 **** Rebuild of configuration Debug for project 3.2_ExtensionAnRPNCalculator ****
 Info: Internal Builder is used for build
 g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -Wall -Werror=return-type -o "myCode\\main.o" "..\\myCode\\main.cpp" 
-g++ -o 3.1_ComplexNumbersOperatorOverloading.exe "myCode\\CComplex.o" "myCode\\main.o" 
-Info: Nothing to build for 3.1_ComplexNumbersOperatorOverloading
-22:04:20 **** Incremental Build of configuration Debug for project 3.1_ComplexNumbersOperatorOverloading ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -Wall -Werror=return-type -o "myCode\\main.o" "..\\myCode\\main.cpp" 
-g++ -o 3.1_ComplexNumbersOperatorOverloading.exe "myCode\\CComplex.o" "myCode\\main.o" 
-Info: Nothing to build for 3.1_ComplexNumbersOperatorOverloading
-22:04:51 **** Incremental Build of configuration Debug for project 3.1_ComplexNumbersOperatorOverloading ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -Wall -Werror=return-type -o "myCode\\main.o" "..\\myCode\\main.cpp" 
-g++ -o 3.1_ComplexNumbersOperatorOverloading.exe "myCode\\CComplex.o" "myCode\\main.o" 
-Info: Nothing to build for 3.1_ComplexNumbersOperatorOverloading
+g++ -o 3.2_ExtensionAnRPNCalculator.exe "myCode\\main.o" 
+Info: Nothing to build for 3.2_ExtensionAnRPNCalculator
