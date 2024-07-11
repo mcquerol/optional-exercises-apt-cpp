@@ -7,6 +7,8 @@
 
 #include "CRpnCalculator.h"
 
+CRpnCalculator::CRpnCalculator(int size) : m_stack(size){}
+
 bool CRpnCalculator::pushValue(const CFraction &data)
 {
 	return m_stack.push(data);
