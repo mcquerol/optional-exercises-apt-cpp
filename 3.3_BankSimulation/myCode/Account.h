@@ -15,16 +15,14 @@ class Account
 
 private:
 
-	static unsigned int accountID;
+	static unsigned int accountId;
 	double balance;
-	//Customer customer; //TODO very account belongs to a user..?? check if this is the correct way
-
-
 
 public:
-	Account();
+	Account(unsigned int initialBalance);
 	~Account();
 
+	unsigned int getAccountId() const;
 	double getBalance() const;
 	void setBalance(double balance);
 
