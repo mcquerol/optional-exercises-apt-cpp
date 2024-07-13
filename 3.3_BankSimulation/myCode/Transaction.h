@@ -25,7 +25,6 @@ public:
 	Transaction(const Account* sourceAccount, const Account* targetAccount, double amount);
 	~Transaction();
 
-
 	void performTransaction(unsigned int sourceAccountId, unsigned int targetAccountId, double amount, Poco::Data::Date transactionId);
 
 	double getTransactionAmount() const;
