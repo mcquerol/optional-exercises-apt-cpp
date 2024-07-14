@@ -7,9 +7,9 @@
 
 #include "Account.h"
 
-static unsigned int Account::accountId = 100000;
 
-Account::Account(double initialBalance) : balance(initialBalance), accountId(Account::accountId++)
+
+Account::Account(double initialBalance) : accountId(nextId++), balance(initialBalance)
 {
 
 }
