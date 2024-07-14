@@ -7,14 +7,29 @@
 
 #include "Account.h"
 
-Account::Account()
+static unsigned int Account::accountId = 100000;
+
+Account::Account(double initialBalance) : balance(initialBalance), accountId(Account::accountId++)
 {
-	// TODO Auto-generated constructor stub
 
 }
 
 Account::~Account()
 {
-	// TODO Auto-generated destructor stub
+
 }
 
+unsigned int Account::getAccountId() const
+{
+	return accountId;
+}
+
+double Account::getBalance() const
+{
+	return balance;
+}
+
+void Account::setBalance(double amount)
+{
+	balance += amount;
+}
