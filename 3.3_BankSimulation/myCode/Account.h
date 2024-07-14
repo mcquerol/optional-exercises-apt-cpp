@@ -13,7 +13,8 @@ class Account
 
 private:
 
-	static unsigned int accountId;
+    static unsigned int nextId; // Static member to generate unique account IDs
+    unsigned int accountId; // Unique account ID
 	double balance;
 
 public:
