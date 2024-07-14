@@ -8,7 +8,7 @@
 #ifndef TRANSACTION_H_
 #define TRANSACTION_H_
 
-#include <Poco/Data/Date.h>
+#include <Poco/DateTime.h>
 
 #include "Account.h"
 
@@ -16,23 +16,22 @@ class Transaction
 {
 private:
 
-	double amount = 0.0;
-	Account* sourceAccount, targetAccount;
-	Poco::Data::Date transactionDate;
+    Account* sourceAccount; // Pointer to the source account
+    Account* targetAccount; // Pointer to the target account
+    double amount;
+    Poco::DateTime transactionDate;
 
 public:
+    Transaction(Account* sourceAccount, Account* targetAccount, double amount, Poco::DateTime transactionDate);
+    ~Transaction();
 
-	Transaction(const Account* sourceAccount, const Account* targetAccount, double amount);
-	~Transaction();
+    void performTransaction();
 
-	void performTransaction(unsigned int sourceAccountId, unsigned int targetAccountId, double amount, Poco::Data::Date transactionId);
-
-	double getTransactionAmount() const;
-	Account* getSourceAccount() const;
-	Account* getTargetAccount() const;
-	Poco::Data::Date getTransactionDate() const;
-
-
+    double getTransactionAmount() const;
+    Account* getSourceAccount() const;
+    Account* getTargetAccount() const;
+    Poco::DateTime getTransactionDate() const;
 };
 
 #endif /* TRANSACTION_H_ */
+
