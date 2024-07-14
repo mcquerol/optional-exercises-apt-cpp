@@ -17,7 +17,7 @@ private:
 	double balance;
 
 public:
-	Account(unsigned int initialBalance);
+	Account(double initialBalance);
 	~Account();
 
 	unsigned int getAccountId() const;
