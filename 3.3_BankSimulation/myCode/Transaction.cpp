@@ -15,11 +15,11 @@ bool Transaction::verifyTransaction() //check if either account is <=0 before tr
 {
 	if (sourceAccount->getBalance() <= 0 || targetAccount->getBalance() <=0)
 	{
-		return false;
+		return true;
 	}
 	else
 	{
-		return true;
+		return false;
 	}
 }
 
