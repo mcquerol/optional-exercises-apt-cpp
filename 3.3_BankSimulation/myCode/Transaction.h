@@ -31,6 +31,8 @@ public:
     Account* getSourceAccount() const;
     Account* getTargetAccount() const;
     Poco::DateTime getTransactionDate() const;
+
+    bool verifyTransaction();
 };
 
 #endif /* TRANSACTION_H_ */
