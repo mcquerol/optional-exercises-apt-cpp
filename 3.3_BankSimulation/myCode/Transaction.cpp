@@ -11,7 +11,7 @@ Transaction::~Transaction()
 
 }
 
-bool Transaction::verifyTransaction()
+bool Transaction::verifyTransaction() //check if either account is <=0 before transferring money
 {
 	if (sourceAccount->getBalance() <= 0 || targetAccount->getBalance() <=0)
 	{
