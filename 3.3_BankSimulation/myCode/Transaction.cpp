@@ -1,20 +1,54 @@
-/*
- * Transaction.cpp
- *
- *  Created on: 11 Jul 2024
- *      Author: mateo
- */
-
 #include "Transaction.h"
 
-Transaction::Transaction()
+Transaction::Transaction(Account* sourceAccount, Account* targetAccount, double amount, Poco::DateTime transactionDate)
+    : sourceAccount(sourceAccount), targetAccount(targetAccount), amount(amount), transactionDate(transactionDate)
 {
-	// TODO Auto-generated constructor stub
 
 }
 
 Transaction::~Transaction()
 {
-	// TODO Auto-generated destructor stub
+
 }
 
+bool Transaction::verifyTransaction()
+{
+	if (sourceAccount->getBalance() <= 0 || targetAccount->getBalance() <=0)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+void Transaction::performTransaction()
+{
+	if(!verifyTransaction())
+	{
+		amount = abs(amount); //do not allow negative balance
+	}
+	sourceAccount->updateBalance(-amount); //take money from source account
+	targetAccount->updateBalance(amount); //put money in target account
+}
+
+double Transaction::getTransactionAmount() const
+{
+    return amount;
+}
+
+Account* Transaction::getSourceAccount() const
+{
+    return sourceAccount;
+}
+
+Account* Transaction::getTargetAccount() const
+{
+    return targetAccount;
+}
+
+Poco::DateTime Transaction::getTransactionDate() const
+{
+    return transactionDate;
+}
