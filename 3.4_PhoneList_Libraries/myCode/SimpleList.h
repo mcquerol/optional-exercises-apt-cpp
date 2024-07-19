@@ -19,6 +19,10 @@ private:
 
 	std::vector<SimpleListElement> list;
 
+	void addNameAndNumber(std::string name, int number);
+	std::string trim(const std::string& source, const std::string& t);
+	std::string getDigits(const std::string&) const;
+
 public:
 
 	SimpleList();
@@ -27,9 +31,6 @@ public:
 	int getNumber(int pos) const;
 	std::string getName(int pos) const;
 	void print() const;
-	void addNameAndNumber(std::string name, int number);
-	std::string trim(const std::string& source, const std::string& t);
-	std::string getDigits(const std::string&) const;
 
 };
 
