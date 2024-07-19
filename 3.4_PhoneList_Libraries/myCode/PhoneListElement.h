@@ -10,12 +10,13 @@
 
 #include <string>
 #include <vector>
+#include <algorithm>
 
 class PhoneListElement
 {
 private:
 
-	std::vector<int> number;
+	std::vector<int> numbers;
 	std::string name;
 
 public:
@@ -24,7 +25,7 @@ public:
 	std::string getName() const;
 	int getNoNumber() const;
 	int getNumber(int index) const;
-	void addNumber(int number) const;
+	void addNumber(int number);
 	bool numberInList(int number) const;
 
 };

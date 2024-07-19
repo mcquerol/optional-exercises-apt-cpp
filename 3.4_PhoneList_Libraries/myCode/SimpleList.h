@@ -9,6 +9,8 @@
 #define SIMPLELIST_H_
 
 #include <string>
+#include <vector>
+#include <iostream>
 
 #include "SimpleListElement.h"
 
@@ -21,7 +23,7 @@ private:
 
 	void addNameAndNumber(std::string name, int number);
 	std::string trim(const std::string& source, const std::string& t);
-	std::string getDigits(const std::string&) const;
+	std::string getDigits(const std::string& source);
 
 public:
 

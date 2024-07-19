@@ -10,6 +10,8 @@
 
 #include <vector>
 #include <string>
+#include <iostream>
+#include <fstream>
 
 #include "PhoneListElement.h"
 #include "SimpleList.h"
@@ -20,7 +22,7 @@ private:
 
 	std::vector<PhoneListElement> list;
 	bool nameExists(std::string name, int& pos) const;
-	std::string numberDoubled(std::string, int number) const;
+	std::string numberDoubled(std::string name, int number) const;
 
 public:
 

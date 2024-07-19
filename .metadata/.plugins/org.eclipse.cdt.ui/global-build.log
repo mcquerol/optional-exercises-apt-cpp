@@ -1,5 +1,9 @@
-17:07:04 **** Incremental Build of configuration Debug for project 3.3_BankSimulation ****
+20:35:10 **** Incremental Build of configuration Debug for project 3.4_PhoneList_Libraries ****
 Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -Wall -Werror=return-type -o "myCode\\main.o" "..\\myCode\\main.cpp" 
-g++ -o 3.3_BankSimulation.exe "myCode\\Account.o" "myCode\\Bank.o" "myCode\\Customer.o" "myCode\\Transaction.o" "myCode\\main.o" -lPocoData -lPocoFoundation 
-Info: Nothing to build for 3.3_BankSimulation
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -Wall -Werror=return-type -o "myCode\\PhoneListElement.o" "..\\myCode\\PhoneListElement.cpp" 
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -Wall -Werror=return-type -o "myCode\\PhoneList.o" "..\\myCode\\PhoneList.cpp" 
+g++ -o 3.4_PhoneList_Libraries.exe "myCode\\PhoneList.o" "myCode\\PhoneListElement.o" "myCode\\SimpleList.o" "myCode\\SimpleListElement.o" "myCode\\main.o" 
+20:35:27 **** Incremental Build of configuration Debug for project 3.4_PhoneList_Libraries ****
+Info: Internal Builder is used for build
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -Wall -Werror=return-type -o "myCode\\PhoneList.o" "..\\myCode\\PhoneList.cpp" 
+g++ -o 3.4_PhoneList_Libraries.exe "myCode\\PhoneList.o" "myCode\\PhoneListElement.o" "myCode\\SimpleList.o" "myCode\\SimpleListElement.o" "myCode\\main.o" 
