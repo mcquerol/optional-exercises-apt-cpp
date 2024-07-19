@@ -7,9 +7,10 @@
 
 #include "Account.h"
 
+unsigned int Account::nextId = 100000;
 
 
-Account::Account(double initialBalance) : accountId(nextId++), balance(initialBalance)
+Account::Account(double initialBalance) : accountId(Account::nextId++), balance(initialBalance)
 {
 
 }
@@ -29,7 +30,7 @@ double Account::getBalance() const
 	return balance;
 }
 
-void Account::setBalance(double amount)
+void Account::updateBalance(double amount)
 {
 	balance += amount;
 }
