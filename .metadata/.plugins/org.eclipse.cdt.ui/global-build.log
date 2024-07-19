@@ -1,5 +1,5 @@
-17:24:14 **** Rebuild of configuration Debug for project 3.2_ExtensionAnRPNCalculator ****
+17:07:04 **** Incremental Build of configuration Debug for project 3.3_BankSimulation ****
 Info: Internal Builder is used for build
 g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -Wall -Werror=return-type -o "myCode\\main.o" "..\\myCode\\main.cpp" 
-g++ -o 3.2_ExtensionAnRPNCalculator.exe "myCode\\main.o" 
-Info: Nothing to build for 3.2_ExtensionAnRPNCalculator
+g++ -o 3.3_BankSimulation.exe "myCode\\Account.o" "myCode\\Bank.o" "myCode\\Customer.o" "myCode\\Transaction.o" "myCode\\main.o" -lPocoData -lPocoFoundation 
+Info: Nothing to build for 3.3_BankSimulation

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item key="org.eclipse.cdt.utils.ui.controls.FileListControl" value="PocoFoundation"/>
 	<section name="completion_proposal_size">
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
@@ -12,7 +13,7 @@
 		<item key="stubSelected0" value="true"/>
 		<item key="stubVirtual1" value="true"/>
 		<item key="stubImpl1" value="DEFINITION"/>
-		<item key="stubSelected1" value="false"/>
+		<item key="stubSelected1" value="true"/>
 		<item key="stubImpl2" value="DEFINITION"/>
 		<item key="stubSelected2" value="false"/>
 		<item key="stubImpl3" value="DEFINITION"/>
@@ -24,5 +25,9 @@
 	</section>
 	<section name="CResourceRenameRefactoringInputPage">
 		<item key="updateReferences" value="true"/>
+	</section>
+	<section name="OptionalMessageDialog.hide.">
+		<item key="askReindex.detail" value="0"/>
+		<item key="askReindex" value="true"/>
 	</section>
 </section>
