@@ -27,6 +27,7 @@ public:
 
     void performTransaction();
 
+    bool verifyTransaction() const;
     double getTransactionAmount() const;
     Account* getSourceAccount() const;
     Account* getTargetAccount() const;
