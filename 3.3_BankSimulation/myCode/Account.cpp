@@ -9,16 +9,9 @@
 
 unsigned int Account::nextId = 100000;
 
+Account::Account(double initialBalance) : accountId(Account::nextId++), balance(initialBalance){}
 
-Account::Account(double initialBalance) : accountId(Account::nextId++), balance(initialBalance)
-{
-
-}
-
-Account::~Account()
-{
-
-}
+Account::~Account(){}
 
 unsigned int Account::getAccountId() const
 {

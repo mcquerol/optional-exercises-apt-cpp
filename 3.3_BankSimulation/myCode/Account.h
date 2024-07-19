@@ -23,7 +23,7 @@ public:
 
 	unsigned int getAccountId() const;
 	double getBalance() const;
-	void setBalance(double amount);
+	void updateBalance(double amount);
 
 };
 
