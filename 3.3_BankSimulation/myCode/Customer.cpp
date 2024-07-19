@@ -1,20 +1,41 @@
-/*
- * Customer.cpp
- *
- *  Created on: 11 Jul 2024
- *      Author: mateo
- */
-
 #include "Customer.h"
+#include <algorithm> // For std::remove_if
 
-Customer::Customer()
+Customer::Customer() : firstName(""), lastName("") {}
+
+Customer::Customer(const std::string& firstName, const std::string& lastName) : firstName(firstName), lastName(lastName){}
+
+Customer::~Customer(){}
+
+void Customer::createAccount(double initialBalance)
 {
-	// TODO Auto-generated constructor stub
-
+    accounts.push_back(new Account(initialBalance));
 }
 
-Customer::~Customer()
+void Customer::deleteAccount(unsigned int accountId)
 {
-	// TODO Auto-generated destructor stub
+	accounts.pop_back();
 }
 
+void Customer::addTransaction(Transaction* transaction)
+{
+    transactions.push_back((transaction));
+}
+
+const std::vector<Transaction*>& Customer::getTransactions() const
+{
+    return transactions;
+}
+
+const std::vector<Account*>& Customer::getAccounts() const
+{
+    return accounts;
+}
+
+std::string Customer::getFirstName() const {
+    return firstName;
+}
+
+std::string Customer::getLastName() const {
+    return lastName;
+}
