@@ -51,7 +51,6 @@ int SimpleList::size() const
 int SimpleList::getNumber(int pos) const
 {
     int number = list[pos].getNumber();
-
     std::string cleanedNumberStr = getDigits(std::to_string(number));
     return std::stoi(cleanedNumberStr);
 }
