@@ -7,17 +7,14 @@
 
 #include "SimpleList.h"
 
-SimpleList::SimpleList()
-{
-
-}
+SimpleList::SimpleList() {}
 
 void SimpleList::addNameAndNumber(std::string name, int number)
 {
 	list.emplace_back(name,number);
 }
 
-std::string SimpleList::trim(const std::string &source, const std::string &t)
+std::string SimpleList::trim(const std::string &source, const std::string &t) const
 {
     // Find the first position that is not a trim character
     size_t start = source.find_first_not_of(t);
@@ -33,7 +30,7 @@ std::string SimpleList::trim(const std::string &source, const std::string &t)
     return source.substr(start, end - start + 1);
 }
 
-std::string getDigits(const std::string& source)
+std::string SimpleList::getDigits(const std::string& source) const
 {
     std::string result;
     for(char c : source)
@@ -53,12 +50,16 @@ int SimpleList::size() const
 
 int SimpleList::getNumber(int pos) const
 {
-	return list[pos].getNumber();
+    int number = list[pos].getNumber();
+
+    std::string cleanedNumberStr = getDigits(std::to_string(number));
+    return std::stoi(cleanedNumberStr);
 }
 
 std::string SimpleList::getName(int pos) const
 {
-	return list[pos].getName();
+	std::string name = list[pos].getName();
+	return trim(name," ");
 }
 
 void SimpleList::print() const
