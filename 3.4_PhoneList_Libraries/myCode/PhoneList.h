@@ -12,6 +12,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <sstream>
 
 #include "PhoneListElement.h"
 #include "SimpleList.h"
@@ -28,6 +29,7 @@ public:
 
 	PhoneList();
 	void readAndTransformSimpleList(SimpleList& simpleList);
+	void readFromFile(std::string fileName);
 	void saveListToFile(std::string fileName);
 	void print() const;
 
