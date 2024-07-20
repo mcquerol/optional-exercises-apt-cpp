@@ -98,7 +98,6 @@ void PhoneList::readFromFile(std::string fileName)
 		std::cerr << "Unable to open file: " << fileName << std::endl;
 		return;
 	}
-
 	std::string line;
 	// Use a while loop together with the getline() function to read the file line by line
 	while (std::getline(file, line))
@@ -109,7 +108,13 @@ void PhoneList::readFromFile(std::string fileName)
 
         if (std::getline(iss, name, ';') && std::getline(iss, number))
         {
-            list.emplace_back(name,number);
+
+            SimpleListElement element(name, std::stoi(number));
+
+            std::string cleanedName = element.getName();
+            int cleanedNumber = element.getNumber();
+
+            list.emplace_back(cleanedName, cleanedNumber);
         }
 	}
 
