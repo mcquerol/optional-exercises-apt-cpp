@@ -8,11 +8,21 @@
 #ifndef TEXT_H_
 #define TEXT_H_
 
+#include <string>
+#include "Node.h"
+
 class Text
 {
+private:
+	std::string m_text;
+
 public:
 	Text();
-	~Text();
+	std::string getText() const;
+	void setText(std::string text);
+	bool parseInput(const std::string& input, unsigned int& parsePosition);
+	void print(int indent) const;
+	Node::node_t getNodeType() const;
 };
 
 #endif /* TEXT_H_ */
