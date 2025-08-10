@@ -7,13 +7,12 @@
 
 #include "Node.h"
 
-Node::Node()
-{
-	// TODO Auto-generated constructor stub
 
+Node::Node(node_t nodeType) : m_node{nodeType}
+{
 }
 
-Node::~Node()
+Node::node_t Node::getNodeType() const
 {
-	// TODO Auto-generated destructor stub
+	return m_node;
 }
