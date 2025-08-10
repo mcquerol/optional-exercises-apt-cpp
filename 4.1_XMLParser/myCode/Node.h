@@ -10,10 +10,21 @@
 
 class Node
 {
-public:
-	Node();
-	~Node();
 
+public:
+	enum node_t
+	{
+		ELEMENT,
+		TEXT
+	};
+
+
+private:
+	node_t m_node;
+
+public:
+	node_t getNodeType() const;
+	Node(node_t nodeType);
 };
 
 #endif /* NODE_H_ */
