@@ -11,7 +11,7 @@
 #include <string>
 #include "Node.h"
 
-class Text
+class Text : public Node
 {
 private:
 	std::string m_text;
