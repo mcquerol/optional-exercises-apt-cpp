@@ -18,7 +18,6 @@ public:
 		TEXT
 	};
 
-
 private:
 	node_t m_node;
 
