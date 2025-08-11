@@ -7,6 +7,12 @@
 
 #include "Text.h"
 
+#include <iostream>
+#include <string>
+#include <sstream>
+
+using namespace std;
+
 Text::Text() : Node(Node::node_t::TEXT)
 {
 }
@@ -23,8 +29,17 @@ void Text::setText(std::string text)
 
 bool Text::parseInput(const std::string &input, unsigned int &parsePosition)
 {
-	return false; //dummy return
-	//TODO implement this method
+	if (input.find('<', parsePosition) == std::string::npos)
+	{
+		return false;
+	}
+
+	istringstream stream(input.substr(parsePosition));
+	getline(stream, m_text, '<');
+
+	parsePosition += m_text.length() + 1;
+
+	return true;
 }
 
 void Text::print(int indent) const
