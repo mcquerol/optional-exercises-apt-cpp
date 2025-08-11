@@ -12,7 +12,7 @@
 
 #include <string>
 
-class Element
+class Element : public Node
 {
 
 private:
