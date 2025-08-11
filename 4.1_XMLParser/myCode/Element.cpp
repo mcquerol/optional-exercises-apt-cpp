@@ -7,7 +7,7 @@
 
 #include "Element.h"
 
-Element::Element() : Node{Node::node_t::ELEMENT} , m_contentNodes{0}, m_tag{""}
+Element::Element() : Node{Node::node_t::ELEMENT} , m_contentNodes{0}, m_tag{"<"}
 {
 
 	for(int i = 0; i < 10; i++)
