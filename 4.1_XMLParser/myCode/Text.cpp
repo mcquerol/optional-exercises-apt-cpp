@@ -44,7 +44,11 @@ bool Text::parseInput(const std::string &input, unsigned int &parsePosition)
 
 void Text::print(int indent) const
 {
-	//TODO implement this method
+	for(int i = 0; i < indent; i++)
+	{
+		cout << " ";
+	}
+	cout << "text=\"" << m_text << "\"" << endl;
 }
 
 Node::node_t Text::getNodeType() const
