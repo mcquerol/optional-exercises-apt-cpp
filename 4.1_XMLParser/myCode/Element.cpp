@@ -33,8 +33,15 @@ Element::~Element()
 
 bool Element::addToContent(Node *child)
 {
-	return false; //dummy return
-	//TODO implment method
+	if(m_contentNodes == 10)
+	{
+		return false;
+	}
+
+	m_content[m_contentNodes] = child;
+	m_contentNodes++;
+
+	return true;
 }
 
 bool Element::parseStartOrEndTag(const std::string &input, unsigned int &parsePosition, bool &isStartTag, std::string &tag)
@@ -53,7 +60,7 @@ bool Element::parseStartOrEndTag(const std::string &input, unsigned int &parsePo
 	auto tagLength = endTagPos - tagStart;
 	tag = input.substr(tagStart, tagLength);
 	m_tag = tag;
-	parsePosition++;
+	parsePosition = endTagPos + 1;
 
 	return true;
 }
