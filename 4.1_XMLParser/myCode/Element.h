@@ -28,6 +28,7 @@ public:
 	Element();
 	~Element();
 	bool parseInput(const std::string& input, unsigned int& parsePosition);
+	void print(int indent) const;
 	Node::node_t getNodeType() const;
 };
 
