@@ -72,6 +72,15 @@ bool Element::parseInput(const std::string &input, unsigned int &parsePosition)
 	//TODO implement method
 }
 
+void Element::print(int indent) const
+{
+	for(int i = 0; i < indent + 2; i++) // 2 extra spaces for element print method
+	{
+		cout << " ";
+	}
+	cout << "tag=\"" << m_tag << "\"" << endl;
+}
+
 Node::node_t Element::getNodeType() const
 {
 	return Node::getNodeType();
