@@ -7,7 +7,13 @@
 
 #include "Element.h"
 
-Element::Element() : Node{Node::node_t::ELEMENT} , m_contentNodes{0}, m_tag{"<"}
+#include <iostream>
+#include <string>
+#include <sstream>
+
+using namespace std;
+
+Element::Element() : Node{Node::node_t::ELEMENT} , m_contentNodes{0}, m_tag{""}
 {
 
 	for(int i = 0; i < 10; i++)
@@ -33,8 +39,23 @@ bool Element::addToContent(Node *child)
 
 bool Element::parseStartOrEndTag(const std::string &input, unsigned int &parsePosition, bool &isStartTag, std::string &tag)
 {
-	return false; //dummy return
-	//TODO implement method
+
+	if(input.find("<", parsePosition) == std::string::npos || input.find(">", parsePosition) == std::string::npos)
+	{
+		return false; //return false if < or > is not found
+	}
+
+	auto startTagPos = input.find("<");
+	auto endTagPos = input.find(">");
+	isStartTag = (input[startTagPos + 1] == '/') ? false : true;
+
+	auto tagStart = startTagPos + (isStartTag ? 1 : 2);
+	auto tagLength = endTagPos - tagStart;
+	tag = input.substr(tagStart, tagLength);
+	m_tag = tag;
+	parsePosition++;
+
+	return true;
 }
 
 
